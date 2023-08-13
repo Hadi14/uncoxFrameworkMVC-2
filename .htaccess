@@ -1,4 +1,6 @@
 Options -Indexes
+
 RewriteEngine on
-RewriteCond %{REQUEST_URI} !on
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteBase /uncoxFrameworkMVC-2/
+RewriteCond %{REQUEST_URI} !\.{jpg|css|png|js|webp|ttf|}
+RewriteRule .* index.php [L]

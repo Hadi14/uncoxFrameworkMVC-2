@@ -21,3 +21,7 @@ function br()
 {
     echo "<br>\n";
 }
+function getFullUrl()
+{
+    return $_SERVER['REQUEST_URI'];
+}
