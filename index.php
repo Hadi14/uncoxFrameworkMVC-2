@@ -13,7 +13,29 @@
     <h1 class="h1class">index.php</h1>
     <?
     require_once('system/loader.php');
-    echo getFullUrl();
+    $uri = getRequestUri();
+    $uri = str_replace('/uncoxFrameworkMVC-2/', '/', $uri);
+    $parts = explode('/', $uri);
+    $controller = $parts[1];
+    $method = $parts[2];
+
+    $params = array();
+    for ($i = 3; $i < count($parts); $i++) {
+        $params[] = $parts[$i];
+    }
+    $controllerClassname = ucfirst($controller) . "Controller";
+    $controllerFilePath = "controller/" . $controller .  ".php";
+    require_once($controllerFilePath);
+    $controllerInstance = new  $controllerClassname();
+
+    // echo "PARAMS-1:  $params[0] <hr>";
+    $controllerInstance->$method($params[0]);
+    br();
+    echo $controllerClassname;
+    br();
+    echo $method;
+    br();
+    dump($params);
     ?>
 </body>
 

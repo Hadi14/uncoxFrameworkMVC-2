@@ -23,5 +23,9 @@ function br()
 }
 function getFullUrl()
 {
-    return $_SERVER['REQUEST_URI'];
+    return $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+}
+function getRequestUri()
+{
+    return  $_SERVER['REQUEST_URI'];
 }
