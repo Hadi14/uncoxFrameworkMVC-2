@@ -28,14 +28,14 @@
     require_once($controllerFilePath);
     $controllerInstance = new  $controllerClassname();
 
-    // echo "PARAMS-1:  $params[0] <hr>";
     $controllerInstance->$method($params[0]);
-    br();
-    echo $controllerClassname;
-    br();
-    echo $method;
-    br();
-    dump($params);
+    // echo "PARAMS-1:  $params[0] <hr>";
+    // br();
+    // echo $controllerClassname;
+    // br();
+    // echo $method;
+    // br();
+    // dump($params);
     ?>
 </body>
 
