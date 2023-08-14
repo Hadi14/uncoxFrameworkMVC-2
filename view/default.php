@@ -10,9 +10,12 @@
 </head>
 
 <body>
+
     <h1 class="h1class">Default.php</h1>
     <div class="header">Header</div>
-    <div class="content"><?= $data['abc'] ?></div>
+    <hr>
+    <div class="content"><?= $out ?></div>
+    <hr>
     <div class="footer">Footer</div>
 </body>
 

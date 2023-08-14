@@ -44,8 +44,9 @@ class UserController
     {
         // echo "Login Form";
         // $content = "HelloWord";
-        $ar['abc']="TestWord";
-        $r = Render::render('view/default.php', $ar);
+        echo "Loginform";
+        $ar['abc'] = "TestWord";
+        $r = Render::render('view/login.php', $ar);
     }
     /************************  Register  ******************************* */
     public function register()
