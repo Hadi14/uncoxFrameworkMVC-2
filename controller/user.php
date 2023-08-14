@@ -88,6 +88,7 @@ class UserController
     }
     private function registerForm()
     {
+        require_once('view/default.php');
         echo "Register Form";
     }
 }
