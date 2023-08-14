@@ -29,3 +29,8 @@ function getRequestUri()
 {
     return  $_SERVER['REQUEST_URI'];
 }
+
+
+ function getBaseUrl() {
+    return "/uncoxFrameworkMVC-2/";
+}
