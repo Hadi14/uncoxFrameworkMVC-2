@@ -1,6 +1,6 @@
 <? class Render
 {
-    public function render($filePath)
+    public static function render($filePath)
     {
         require_once($filePath);
     }
