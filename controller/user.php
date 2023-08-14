@@ -21,6 +21,7 @@ class UserController
             $this->LoginForm();
         }
     }
+    /*-----------------------------*/
     private function LoginCheck()
     {
         require('main.php');
@@ -38,9 +39,13 @@ class UserController
             $_SESSION['uname'] = $u;
         }
     }
+    /*-----------------------------*/
     private function LoginForm()
     {
-        echo "Login Form";
+        // echo "Login Form";
+        // $content = "HelloWord";
+        $ar['abc']="TestWord";
+        $r = Render::render('view/default.php', $ar);
     }
     /************************  Register  ******************************* */
     public function register()
@@ -52,14 +57,13 @@ class UserController
             $this->registerForm();
         }
     }
+    /*-----------------------------*/
     private function registerCheck()
     {
         $db = Db::getInstance();
         $u = $_POST['uname'];
         $p = $_POST['pass'];
         $cp = $_POST['cpass'];
-
-
         $sql = "select * from users where username='$u' and password='$p' ";
         $record = $db->query($sql);
 
@@ -86,6 +90,7 @@ class UserController
             }
         }
     }
+    /*-----------------------------*/
     private function registerForm()
     {
         require_once('view/default.php');

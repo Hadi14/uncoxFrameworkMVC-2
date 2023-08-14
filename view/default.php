@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <h1 class="h1class">Default Page</h1>
-    <div class="header"></div>
-    <div class="content"></div>
-    <div class="footer"></div>
+    <h1 class="h1class">Default.php</h1>
+    <div class="header">Header</div>
+    <div class="content"><?= $data['abc'] ?></div>
+    <div class="footer">Footer</div>
 </body>
 
 </html>
