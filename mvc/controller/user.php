@@ -46,7 +46,7 @@ class UserController
         // $content = "HelloWord";
         echo "Loginform";
         $ar['abc'] = "Loginform-Parameter";
-        Render::render('view/user/login.php', $ar);
+        Render::render('user/login.php', $ar);
     }
     /************************  Register  ******************************* */
     public function register()
@@ -96,6 +96,6 @@ class UserController
     {
         echo "Register Form";
         $ar['abc'] = "RegisterForm-Parameter";
-        Render::render('view/user/register.php', $ar);
+        Render::render('user/register.php', $ar);
     }
 }
