@@ -34,3 +34,7 @@ function getRequestUri()
  function getBaseUrl() {
     return "/uncoxFrameworkMVC-2/";
 }
+
+function strHas($str,$sub)  {
+    return $str.substr($sub)
+}
