@@ -45,8 +45,8 @@ class UserController
         // echo "Login Form";
         // $content = "HelloWord";
         echo "Loginform";
-        $ar['abc'] = "TestWord";
-        $r = Render::render('view/login.php', $ar);
+        $ar['abc'] = "Loginform-Parameter";
+        Render::render('view/login.php', $ar);
     }
     /************************  Register  ******************************* */
     public function register()
@@ -94,7 +94,8 @@ class UserController
     /*-----------------------------*/
     private function registerForm()
     {
-        require_once('view/default.php');
         echo "Register Form";
+        $ar['abc'] = "RegisterForm-Parameter";
+        Render::render('view/register.php', $ar);
     }
 }

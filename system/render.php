@@ -6,8 +6,8 @@
 
         extract($data);
         ob_start();
-        require_once($filePath);
+        require_once("mvc/" . $filePath);
         $out = ob_get_clean();
-        require_once('view/default.php');
+        require_once('theme/default.php');
     }
 }
