@@ -36,7 +36,11 @@ function getBaseUrl()
     return "/uncoxFrameworkMVC-2/";
 }
 
-function strHas($str, $sub)
+function strHas($str, $srch, $caseSensitive = false)
 {
-    return $str->substr($sub);
+    if ($caseSensitive) {
+        return strpos($str, $srch) !== false;
+    } else {
+        return strpos(strtolower($str), strtolower($srch)) !== false;
+    }
 }
