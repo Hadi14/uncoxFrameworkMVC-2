@@ -31,10 +31,12 @@ function getRequestUri()
 }
 
 
- function getBaseUrl() {
+function getBaseUrl()
+{
     return "/uncoxFrameworkMVC-2/";
 }
 
-function strHas($str,$sub)  {
-    return $str.substr($sub)
+function strHas($str, $sub)
+{
+    return $str->substr($sub);
 }
