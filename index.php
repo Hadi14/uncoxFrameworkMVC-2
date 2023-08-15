@@ -24,8 +24,8 @@
         $params[] = $parts[$i];
     }
     $controllerClassname = ucfirst($controller) . "Controller";
-    $controllerFilePath = "mvc/controller/" . $controller .  ".php";
-    require_once($controllerFilePath);
+    // $controllerFilePath = "mvc/controller/" . $controller .  ".php";
+    // require_once($controllerFilePath);
     $controllerInstance = new  $controllerClassname();
 
     $controllerInstance->$method($params[0]);
