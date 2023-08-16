@@ -44,3 +44,9 @@ function strHas($str, $srch, $caseSensitive = false)
         return strpos(strtolower($str), strtolower($srch)) !== false;
     }
 }
+
+function showmsg($type, $msg)
+{
+    $ar['msg'] = $msg;
+    Render::render("message/$type.php", $ar);
+}

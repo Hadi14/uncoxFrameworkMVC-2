@@ -35,7 +35,8 @@ class UserController
             header("Location: fail.php");
         } else {
             $msg = "<h4>تبریک شما به سیستم وارد شدید.</h4> <br> <span>برای ورود به صفحه اصلی<a href='index.php'> اینجا </a>کلیک کنید</span>";
-            require_once('success.php');
+            // require_once('success.php');
+            showmsg("success",$msg);
             $_SESSION['uname'] = $u;
         }
     }
