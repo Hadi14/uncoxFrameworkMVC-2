@@ -1,6 +1,6 @@
 <div class="tac">
     <img style="width: 200px;" src="<?= getBaseUrl() ?>images/register.jpg" alt=""><br>
-    <form action="register-check.php" method="post">
+    <form action="<?= getBaseUrl() ?>user/register" method="post">
         <label for="">UserName</label>
         <input name="uname" type="text"><br><br>
         <label for="">Password</label>

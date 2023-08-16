@@ -9,7 +9,7 @@ if (isset($_SESSION['uname'])) {
 ?>
 <div class="tac">
     <img style="width: 200px;" src="<?= getBaseUrl() ?>images/notes.png" alt=""><br>
-    <form action="login-check.php" method="post">
+    <form action="<?= getBaseUrl() ?>user/login" method="post">
         <label for="">UserName</label>
         <input name="uname" type="text"><br><br>
         <label for="">Password</label>
