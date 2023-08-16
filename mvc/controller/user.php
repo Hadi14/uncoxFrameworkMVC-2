@@ -14,7 +14,7 @@ class UserController
     /************************  Login  ******************************* */
     function login()
     {
-        if (isset($_SESSION['uname'])) {
+        if (isset($_POST['uname'])) {
 
             $this->LoginCheck();
         } else {
@@ -24,7 +24,7 @@ class UserController
     /*-----------------------------*/
     private function LoginCheck()
     {
-        require('main.php');
+        // require('main.php');
         $db = Db::getInstance();
         $u = $_POST['uname'];
         $p = $_POST['pass'];
@@ -51,7 +51,7 @@ class UserController
     /************************  Register  ******************************* */
     public function register()
     {
-        if (isset($_SESSION['uname'])) {
+        if (isset($_POST['uname'])) {
 
             $this->registerCheck();
         } else {
@@ -61,6 +61,7 @@ class UserController
     /*-----------------------------*/
     private function registerCheck()
     {
+        echo "Register Check .####";
         $db = Db::getInstance();
         $u = $_POST['uname'];
         $p = $_POST['pass'];
@@ -69,7 +70,6 @@ class UserController
         $record = $db->query($sql);
 
         if ($u == "" || $p == "" || $cp == "") {
-            // echo "Plase Fill All Boxes.!!!";
             $msg = "Plase Fill All Boxes.!!!";
             require_once('fail.php');
         } else if ($p != $cp) {
@@ -84,7 +84,7 @@ class UserController
             if ($res) {
                 $msg = "Thankyou You Registeded.!!! <br>";
                 $msg .= "برای ورود  "  . "<a href='login.php'>اینجا</a>" . " کلیک کنید ";
-                require_once('fail.php');
+                require_once('success.php');
             } else {
                 $msg = "Register in Error.!!!";
                 require_once('fail.php');
