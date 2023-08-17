@@ -4,7 +4,7 @@ spl_autoload_register(function ($class_name) {
         echo "<hr>Model AutoLoad !!!!!!!!!!!!!!!!!! <hr>";
         $fileName = str_replace("Model", "", $class_name);
         $fileName = strtolower($fileName);
-        require_once("mvc/model/$fileName .php");
+        require_once("mvc/model/$fileName.php");
         return;
     }
     if (strHas($class_name, "Controller")) {
