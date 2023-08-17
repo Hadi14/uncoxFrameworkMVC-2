@@ -45,8 +45,11 @@ function strHas($str, $srch, $caseSensitive = false)
     }
 }
 
-function showmsg($type, $msg)
+function showmsg($type, $msg, $exit)
 {
     $ar['msg'] = $msg;
     Render::render("message/$type.php", $ar);
+    if ($exit) {
+        exit;
+    }
 }

@@ -34,11 +34,11 @@ class UserController
         if ($record == null) {
             // header("Location: fail.php");
             $msg = "<h4>نام کاربری یا رمز اشتباه وارد شده است.</h4> <br> <span>برای ورود مجدد <a href='" . getBaseUrl() . "user/login'> اینجا </a>کلیک کنید</span>";
-            showmsg("fail", $msg);
+            showmsg("fail", $msg, true);
         } else {
-            $msg = "<h4>تبریک شما به سیستم وارد شدید.</h4> <br> <span>برای ورود به صفحه اصلی<a href='index.php'> اینجا </a>کلیک کنید</span>";
+            $msg = "<h4>تبریک شما به سیستم وارد شدید.</h4> <br> <span>برای ورود به صفحه اصلی<a href='user/login'> اینجا </a>کلیک کنید</span>";
             // require_once('success.php');
-            showmsg("success", $msg);
+            showmsg("success", $msg, false);
             $_SESSION['uname'] = $u;
         }
     }
@@ -74,13 +74,16 @@ class UserController
 
         if ($u == "" || $p == "" || $cp == "") {
             $msg = "Plase Fill All Boxes.!!!";
-            require_once('mvc/view/message/fail.php');
+            // require_once('mvc/view/message/fail.php');
+            showmsg("fail", $msg, true);
         } else if ($p != $cp) {
             $msg = "Plase type the same Password and Confirm Password.!!!";
-            require_once('mvc/view/message/fail.php');
+            // require_once('mvc/view/message/fail.php');
+            showmsg("fail", $msg, true);
         } else if ($record != null) {
             $msg = "You Already Registerd.!!!";
-            require_once('mvc/view/message/fail.php');
+            // require_once('mvc/view/message/fail.php');
+            showmsg("fail", $msg, true);
         } else {
             $res = UserModel::insert($u, $p, '2');
 
@@ -90,7 +93,8 @@ class UserController
                 require_once('mvc/view/message/success.php');
             } else {
                 $msg = "Register in Error.!!!";
-                require_once('mvc/view/message/fail.php');
+                // require_once('mvc/view/message/fail.php');
+                showmsg("fail", $msg, true);
             }
         }
     }
