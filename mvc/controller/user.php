@@ -32,11 +32,13 @@ class UserController
         $sql = "select * from users where username='$u' and password='$p'";
         $record = $db->query($sql);
         if ($record == null) {
-            header("Location: fail.php");
+            // header("Location: fail.php");
+            $msg = "<h4>نام کاربری یا رمز اشتباه وارد شده است.</h4> <br> <span>برای ورود مجدد <a href='" . getBaseUrl() . "mvc/user/login'> اینجا </a>کلیک کنید</span>";
+            showmsg("fail", $msg);
         } else {
             $msg = "<h4>تبریک شما به سیستم وارد شدید.</h4> <br> <span>برای ورود به صفحه اصلی<a href='index.php'> اینجا </a>کلیک کنید</span>";
             // require_once('success.php');
-            showmsg("success",$msg);
+            showmsg("success", $msg);
             $_SESSION['uname'] = $u;
         }
     }
