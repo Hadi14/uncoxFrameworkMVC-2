@@ -25,12 +25,13 @@ class UserController
     private function LoginCheck()
     {
         // require('main.php');
-        $db = Db::getInstance();
+        // $db = Db::getInstance();
         $u = $_POST['uname'];
         $p = $_POST['pass'];
 
-        $sql = "select * from users where username='$u' and password='$p'";
-        $record = $db->query($sql);
+        // $sql = "select * from users where username='$u' and password='$p'";
+        $record = UserModel::getFirst($u, $p);
+        // $record = $db->query($sql);
         if ($record == null) {
             // header("Location: fail.php");
             $msg = "<h4>نام کاربری یا رمز اشتباه وارد شده است.</h4> <br> <span>برای ورود مجدد <a href='" . getBaseUrl() . "user/login'> اینجا </a>کلیک کنید</span>";
@@ -65,12 +66,14 @@ class UserController
     private function registerCheck()
     {
         echo "Register Check .####";
-        $db = Db::getInstance();
+        // $db = Db::getInstance();
+
         $u = $_POST['uname'];
         $p = $_POST['pass'];
         $cp = $_POST['cpass'];
-        $sql = "select * from users where username='$u' and password='$p' ";
-        $record = $db->query($sql);
+        $record = UserModel::getFirst($u, $p);
+        // $sql = "select * from users where username='$u' and password='$p' ";
+        // $record = $db->query($sql);
 
         if ($u == "" || $p == "" || $cp == "") {
             $msg = "Plase Fill All Boxes.!!!";

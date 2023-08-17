@@ -1,7 +1,7 @@
 <?
 if (isset($_SESSION['uname'])) {
     echo "<br>" . $_SESSION['uname'];
-    $msg = "شما قبلا وارد سیستم شده اید " . "<a href='index.php'> اینجا</a>" .
+    $msg = "شما قبلا وارد سیستم شده اید " . "<a href=" . getBaseUrl() . "> اینجا</a>" .
         "برای ورود کلیک کنید " . "<br>" . "برای خارج شدن کلیک کنید" . "<a href='logout.php'>خروج</a>";
     require_once('mvc/view/message/success.php');
     exit;
