@@ -30,7 +30,9 @@ class UserController
         $p = $_POST['pass'];
 
         // $sql = "select * from users where username='$u' and password='$p'";
+        // echo "<hr> $u <br> $p <hr>";
         $record = UserModel::getFirst($u, $p);
+        // dump($record);
         // $record = $db->query($sql);
         if ($record == null) {
             // header("Location: fail.php");
@@ -107,5 +109,10 @@ class UserController
         echo "Register Form";
         $ar['abc'] = "RegisterForm-Parameter";
         Render::render('user/register.php', $ar);
+    }
+    private function loguot()
+    {
+        session_destroy();
+        header("Location: /user/login/");
     }
 }

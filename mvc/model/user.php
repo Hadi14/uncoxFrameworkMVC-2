@@ -10,7 +10,7 @@ class UserModel
     {
         $db = Db::getInstance();
         $sql = "select * from users where username='$u' and password='$p'";
-       $records=$db->first();
-        return $records[0];
+        $records = $db->first($sql);
+        return $records;
     }
 }
