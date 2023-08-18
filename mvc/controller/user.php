@@ -110,9 +110,9 @@ class UserController
         $ar['abc'] = "RegisterForm-Parameter";
         Render::render('user/register.php', $ar);
     }
-    private function loguot()
+    public function loguot()
     {
         session_destroy();
-        header("Location: /user/login/");
+        header("Location:" . getBaseUrl() . "user/login/");
     }
 }
